@@ -21,7 +21,6 @@
         android:text="@string/get_jokes_btn"
         android:id="@+id/btnGetJokes"
         android:layout_below="@+id/textView"
-        android:onClick="getJokes"
-        />
+        android:onClick="getJokes"/>
 
 </RelativeLayout>

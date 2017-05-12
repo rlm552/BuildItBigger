@@ -39,4 +39,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, JokeActivity.class);
         startActivity(intent);
     }
+
 }

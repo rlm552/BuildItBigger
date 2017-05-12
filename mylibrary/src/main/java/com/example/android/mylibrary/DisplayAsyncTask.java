@@ -20,7 +20,11 @@ public class DisplayAsyncTask extends AsyncTask<Void, Void, List<Quote>>  {
     private static QuoteEndpoint myApiService = null;
     private Context context;
 
-    DisplayAsyncTask(Context context) {
+    private OnTaskCompleted mListener;
+    private Exception mError = null;
+
+    DisplayAsyncTask(Context context, OnTaskCompleted listener) {
+        this.mListener = listener;
         this.context = context;
     }
 
@@ -56,5 +60,13 @@ public class DisplayAsyncTask extends AsyncTask<Void, Void, List<Quote>>  {
         for (Quote q : result) {
             Toast.makeText(context, q.getWhat(), Toast.LENGTH_LONG).show();
         }
+        // For testing purposes
+        String s = result.toString();
+        mListener.onTaskCompleted(s);
+    }
+
+    @Override
+    protected void onCancelled(){
+
     }
 }

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/6kUy5WuQaURifEykX79Pf-Moz4I\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/6kUy5WuQaURifEykX79Pf-Moz4I\"",
  "discoveryVersion": "v1",
  "id": "quoteEndpoint:v1",
  "name": "quoteEndpoint",
