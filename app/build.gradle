@@ -11,6 +11,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -21,10 +24,22 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Android runner and rules support
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    
+    // add this for intent mocking support
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+
+    // add this for webview testing support
+    androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    androidTestCompile 'com.android.support:appcompat-v7:25.3.1'
+
     compile project(':javajokes')
     compile project(':mylibrary')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
