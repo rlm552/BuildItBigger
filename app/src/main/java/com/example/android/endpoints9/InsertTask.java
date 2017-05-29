@@ -16,7 +16,7 @@ public class InsertTask extends AsyncTask<Quote, Void, Void> {
     private static QuoteEndpoint myApiService = null;
     private Context context;
 
-    InsertTask(Context context){this.context = context;}
+    public InsertTask(Context context){this.context = context;}
     @Override
     protected Void doInBackground(Quote... quotes){
         if(myApiService == null) {  // Only do this once
