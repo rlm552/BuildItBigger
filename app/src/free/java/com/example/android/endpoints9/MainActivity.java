@@ -24,19 +24,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        long idStart = 32323323L;
+        String APP_ID = "ca-app-pub-3940256099942544~3347511713";
+
         Jokes jokes = new Jokes();
         String[] funny = jokes.setJokes();
 
+
         Quote[] quotes = new Quote[funny.length];
+
         for (int i = 0; i < 3; i++){
             quotes[i] = new Quote();
             quotes[i].setWhat(funny[i]);
-            quotes[i].setId(32323323L + i);
+            quotes[i].setId(idStart + i);
         }
 
         new InsertTask(this).execute(quotes);
         MobileAds.initialize(getApplicationContext(),
-                "ca-app-pub-3940256099942544~3347511713");
+                APP_ID);
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

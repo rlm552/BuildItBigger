@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Endpoints9</string>
+    <string name="app_name">Build It Bigger</string>
     <string name="joke_activity">Joke Activity</string>
     <string name="java_library">Java Jokes</string>
     <string name="get_jokes_btn">Get Jokes</string>
